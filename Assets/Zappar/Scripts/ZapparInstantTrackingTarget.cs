@@ -34,7 +34,12 @@ public class ZapparInstantTrackingTarget : ZapparTrackingTarget, ZapparCamera.IC
         Matrix4x4 instantTrackerPose = Z.InstantWorldTrackerAnchorPose(m_instantTracker, cameraPose, m_isMirrored);
         Matrix4x4 targetPose = Z.ConvertToUnityPose(instantTrackerPose);
 
+
+        
         transform.localPosition = Z.GetPosition(targetPose);
+        
+
+
         transform.localRotation = Z.GetRotation(targetPose);
         transform.localScale = Z.GetScale(targetPose);
     }
@@ -55,9 +60,12 @@ public class ZapparInstantTrackingTarget : ZapparTrackingTarget, ZapparCamera.IC
         if (Input.touchCount > 0)
         {
             m_userHasPlaced = true;
-        }
-
+        } 
+        
         UpdateTargetPose();
+        
+
+        
     }
 
     void OnDestroy()
