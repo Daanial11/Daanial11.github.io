@@ -15,14 +15,16 @@
 </head>
 <body>
     <model-viewer
-        src="Assets/speaker.glb"
+        id="toggle-model"
+        model-viewer src="Assets/speaker.glb"
         ios-src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.usdz?v=1569545377878"
         poster="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717"
         alt="A 3D model of an astronaut"
         shadow-intensity="1"
+        ar
         camera-controls
         >
-
+        
         
     </model-viewer>
     
@@ -30,6 +32,7 @@
         Start experience
     </button>
 
+    
 
     <script>
         function changeModel() {
@@ -37,6 +40,13 @@
         }
     </script>
     
+
+    <script>
+        const models = ['Speaker.glb', 'Astronaut.glb'];
+        const toggleModel = document.querySelector('#toggle-model');
+        let j = 0;
+        setInterval(() => toggleModel.setAttribute('src', `../../assets/${models[j++ % 2]}`), 2000);
+    </script>
 </body>
 
 
