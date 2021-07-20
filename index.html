@@ -15,15 +15,30 @@
 </head>
 <body>
     <model-viewer
-        model-viewer src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb?1542147958948"
+        src="Assets/speaker.glb"
         ios-src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.usdz?v=1569545377878"
         poster="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717"
         alt="A 3D model of an astronaut"
         shadow-intensity="1"
         camera-controls
-        auto-rotate ar>
+        >
+
+        
     </model-viewer>
     
+    <button style="background-color: rgb(173, 0, 0); border-radius: 4px; border: none; text-align: center; vertical-align: bottom;" onclick="changeModel()">
+        Start experience
+    </button>
 
+
+    <script>
+        function changeModel() {
+            document.querySelector("model-viewer").setAttribute("src", "Assets/Astronaut.glb")
+        }
+    </script>
+    
 </body>
+
+
 </html>
+
